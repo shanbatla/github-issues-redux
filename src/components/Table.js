@@ -6,35 +6,32 @@ class Table extends React.Component {
     constructor(props) {
         super(props);
 
-        this.columns = ["name","city","state","country"];
+        this.columns = ["User Avatar","User Name","Issue Number","Issue Title","Labels","Issue Body"];
 
         this.fakeData = [
             {
-                "id": 0,
-                "name": "Mayer Leonard",
-                "city": "Kapowsin",
-                "state": "Hawaii",
-                "country": "United Kingdom",
-                "company": "Ovolo",
-                "favoriteNumber": 7
+                "User Avatar": 0,
+                "User Name": "Mayer Leonard",
+                "Issue Number": "Kapowsin",
+                "Issue Title": "Hawaii",
+                "Labels": "United Kingdom",
+                "Issue Body": "Ovolo"
              },
              {
-                 "id": 1,
-                 "name": "Mayer Leonard",
-                 "city": "Kapowsin",
-                 "state": "Hawaii",
-                 "country": "United Kingdom",
-                 "company": "Ovolo",
-                 "favoriteNumber": 7
+                 "User Avatar": 1,
+                 "User Name": "Mayer Leonard",
+                 "Issue Number": "Kapowsin",
+                 "Issue Title": "Hawaii",
+                 "Labels": "United Kingdom",
+                 "Issue Body": "Ovolo"
              },
              {
-                 "id": 2,
-                 "name": "Mayer Leonard",
-                 "city": "Kapowsin",
-                 "state": "Hawaii",
-                 "country": "United Kingdom",
-                 "company": "Ovolo",
-                 "favoriteNumber": 7
+                 "User Avatar": 2,
+                 "User Name": "Mayer Leonard",
+                 "Issue Number": "Kapowsin",
+                 "Issue Title": "Hawaii",
+                 "Labels": "United Kingdom",
+                 "Issue Body": "Ovolo"
              }
         ];
     }
