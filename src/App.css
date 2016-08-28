@@ -23,3 +23,7 @@ body {
 .App-intro {
   font-size: large;
 }
+
+#table {
+    margin: 20px;
+}

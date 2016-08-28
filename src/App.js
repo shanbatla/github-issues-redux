@@ -1,4 +1,5 @@
 import React from 'react';
+import Table from './components/Table';
 import './App.css';
 
 class App extends React.Component {
@@ -7,6 +8,7 @@ class App extends React.Component {
       <div className="App">
         <div className="App-header">
           <h2>Github Issue Tracker</h2>
+          <Table/>
         </div>
       </div>
     );
