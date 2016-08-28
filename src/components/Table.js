@@ -6,11 +6,10 @@ class Table extends React.Component {
     constructor(props) {
         super(props);
 
-        this.columns = ["User Avatar","User Name","Issue Number","Issue Title","Labels","Issue Body"];
+        this.columns = ["User Name","Issue Number","Issue Title","Labels","Issue Body"];
 
         this.fakeData = [
             {
-                "User Avatar": 0,
                 "User Name": "Mayer Leonard",
                 "Issue Number": "Kapowsin",
                 "Issue Title": "Hawaii",
@@ -18,7 +17,6 @@ class Table extends React.Component {
                 "Issue Body": "Ovolo"
              },
              {
-                 "User Avatar": 1,
                  "User Name": "Mayer Leonard",
                  "Issue Number": "Kapowsin",
                  "Issue Title": "Hawaii",
@@ -26,7 +24,6 @@ class Table extends React.Component {
                  "Issue Body": "Ovolo"
              },
              {
-                 "User Avatar": 2,
                  "User Name": "Mayer Leonard",
                  "Issue Number": "Kapowsin",
                  "Issue Title": "Hawaii",

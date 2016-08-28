@@ -3,6 +3,19 @@ import Table from './components/Table';
 import './App.css';
 
 class App extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            userAvatar: "",
+            userName: "",
+            issueNumber: "",
+            issueTitle: "",
+            labels: "",
+            issueBody: ""
+        }
+    }
+
   render() {
     return (
       <div className="App">
