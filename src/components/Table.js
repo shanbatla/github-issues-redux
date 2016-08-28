@@ -42,7 +42,7 @@ class Table extends React.Component {
     render() {
         return (
             <div id='table'>
-                <Griddle results={this.fakeData} columns={this.columns}/>
+                <Griddle results={this.fakeData} columns={this.columns} tableClassName="table" showSettings={true}/>
             </div>
         );
     }
