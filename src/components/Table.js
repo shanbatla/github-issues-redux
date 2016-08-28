@@ -6,7 +6,7 @@ class Table extends React.Component {
     constructor(props) {
         super(props);
 
-        // this.columns = {["name","city","state","country"]}
+        this.columns = ["name","city","state","country"];
 
         this.fakeData = [
             {
