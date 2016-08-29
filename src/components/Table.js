@@ -32,17 +32,32 @@ class Table extends React.Component {
              }
         ];
 
+        this.issuesForTable = [];
+
         this.fetchIssues = this.fetchIssues.bind(this);
     }
 
     fetchIssues() {
-        console.log(this.props.issues);
+        const rawData = this.props.issues;
+
+        const processedDataForTable = rawData.map(function(issue) {
+            return {
+                "User Name": issue.user.login,
+                "Issue Number": issue.number,
+                "Issue Title": issue.title,
+                "Labels": issue.labels,
+                "Issue Body": issue.body
+            }
+        });
+
+        this.issuesForTable = processedDataForTable;
+        console.log(this.issuesForTable);
     }
 
     render() {
         return (
             <div id='table'>
-                <Griddle results={this.fakeData} columns={this.columns} tableClassName="table" showSettings={true}/>
+                <Griddle results={this.issuesForTable} columns={this.columns} tableClassName="table" showSettings={true}/>
                 <button id="fetch-button" onClick={this.fetchIssues}>Fetch Issues</button>
             </div>
         );
