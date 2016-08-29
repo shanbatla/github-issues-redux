@@ -16,7 +16,7 @@ class App extends React.Component {
             this.setState({
                 issues: result
             });
-        })
+        }.bind(this))
     }
 
   render() {
@@ -24,7 +24,7 @@ class App extends React.Component {
       <div className="App">
         <div className="App-header">
           <h2>Github Issue Tracker</h2>
-          <Table issues={this.issues}/>
+          <Table issues={this.state.issues}/>
         </div>
       </div>
     );
