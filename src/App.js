@@ -16,6 +16,12 @@ class App extends React.Component {
         }
     }
 
+    componentDidMount() {
+        $.get('https://api.github.com/repos/npm/npm/issues', function(result) {
+            console.log(result);
+        })
+    }
+
   render() {
     return (
       <div className="App">
