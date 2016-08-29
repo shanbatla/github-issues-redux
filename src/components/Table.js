@@ -8,31 +8,9 @@ class Table extends React.Component {
 
         this.columns = ["User Name","Issue Number","Issue Title","Labels","Issue Body"];
 
-        this.fakeData = [
-            {
-                "User Name": "Mayer Leonard",
-                "Issue Number": "Kapowsin",
-                "Issue Title": "Hawaii",
-                "Labels": "United Kingdom",
-                "Issue Body": "Ovolo"
-             },
-             {
-                 "User Name": "Mayer Leonard",
-                 "Issue Number": "Kapowsin",
-                 "Issue Title": "Hawaii",
-                 "Labels": "United Kingdom",
-                 "Issue Body": "Ovolo"
-             },
-             {
-                 "User Name": "Mayer Leonard",
-                 "Issue Number": "Kapowsin",
-                 "Issue Title": "Hawaii",
-                 "Labels": "United Kingdom",
-                 "Issue Body": "Ovolo"
-             }
-        ];
-
-        this.issuesForTable = [];
+        this.state = {
+            issuesForTable: []
+        }
 
         this.fetchIssues = this.fetchIssues.bind(this);
     }
@@ -40,24 +18,29 @@ class Table extends React.Component {
     fetchIssues() {
         const rawData = this.props.issues;
 
-        const processedDataForTable = rawData.map(function(issue) {
-            return {
+        const issuesForTableArray = [];
+
+        rawData.forEach(function(issue) {
+            const issueForTable = {
                 "User Name": issue.user.login,
                 "Issue Number": issue.number,
                 "Issue Title": issue.title,
                 "Labels": issue.labels,
                 "Issue Body": issue.body
             }
-        });
 
-        this.issuesForTable = processedDataForTable;
-        console.log(this.issuesForTable);
+            issuesForTableArray.push(issueForTable);
+        })
+
+        this.setState({
+            issuesForTable: issuesForTableArray
+        })
     }
 
     render() {
         return (
             <div id='table'>
-                <Griddle results={this.issuesForTable} columns={this.columns} tableClassName="table" showSettings={true}/>
+                <Griddle results={this.state.issuesForTable} columns={this.columns} tableClassName="table" showSettings={true}/>
                 <button id="fetch-button" onClick={this.fetchIssues}>Fetch Issues</button>
             </div>
         );
