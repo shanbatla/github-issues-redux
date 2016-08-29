@@ -7,18 +7,15 @@ class App extends React.Component {
         super(props);
 
         this.state = {
-            userAvatar: "",
-            userName: "",
-            issueNumber: "",
-            issueTitle: "",
-            labels: "",
-            issueBody: ""
+            issues: null
         }
     }
 
     componentDidMount() {
         $.get('https://api.github.com/repos/npm/npm/issues', function(result) {
-            console.log(result);
+            this.setState({
+                issues: result
+            });
         })
     }
 
@@ -27,7 +24,7 @@ class App extends React.Component {
       <div className="App">
         <div className="App-header">
           <h2>Github Issue Tracker</h2>
-          <Table/>
+          <Table issues={this.issues}/>
         </div>
       </div>
     );
