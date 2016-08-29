@@ -31,12 +31,19 @@ class Table extends React.Component {
                  "Issue Body": "Ovolo"
              }
         ];
+
+        this.fetchIssues = this.fetchIssues.bind(this);
+    }
+
+    fetchIssues() {
+        console.log(this.props.issues);
     }
 
     render() {
         return (
             <div id='table'>
                 <Griddle results={this.fakeData} columns={this.columns} tableClassName="table" showSettings={true}/>
+                <button id="fetch-button" onClick={this.fetchIssues}>Fetch Issues</button>
             </div>
         );
     }
